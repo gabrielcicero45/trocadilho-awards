@@ -89,6 +89,21 @@ describe("<Pun/>", () => {
     expect(punContext).toBeInTheDocument();
   });
 
+  it("Must contain the vote button", () => {
+    render(
+      <Pun
+        date={pun.date}
+        initialVotes={pun.votes}
+        dev={pun.dev}
+        context={pun.context}
+        message={pun.message}
+      />
+    );
+    const voteButton = screen.getByRole("button");
+
+    expect(voteButton).toBeInTheDocument();
+  })
+
   it("Clicking the vote button should update the vote count.", () => {
     render(
       <Pun
@@ -100,6 +115,7 @@ describe("<Pun/>", () => {
       />
     );
     const voteButton = screen.getByRole("button");
+
     userEvent.click(voteButton);
 
     const votesUpdated = screen.getByRole("cell", { name: 11 });
