@@ -28,7 +28,7 @@ const PunsList = ({ puns }) => {
               );
             })
           ) : (
-            <h1>Lista vazia!</h1>
+            <h3>Lista vazia!</h3>
           )}
         </tbody>
       </table>
