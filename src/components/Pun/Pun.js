@@ -4,13 +4,13 @@ const Pun = ({date,initialVotes,dev,context,message}) => {
 
   const [votes, setVotes] = useState(initialVotes)
   return (
-    <tr>
-      <td>{date}</td>
-      <td>{votes}</td>
-      <td>{dev}</td>
-      <td>{context}</td>
-      <td>{message}</td>
-      <td>
+    <tr className="puns-list__row">
+      <td className="puns-list__data">{date}</td>
+      <td className="puns-list__data">{votes}</td>
+      <td className="puns-list__data">{dev}</td>
+      <td className="puns-list__data">{context}</td>
+      <td className="puns-list__data">{message}</td>
+      <td className="puns-list__data">
         <button onClick={()=>{setVotes(votes => votes+=1)}}>Votar</button>
       </td>
     </tr>

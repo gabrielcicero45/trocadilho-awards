@@ -1,11 +1,12 @@
 import Pun from "../Pun/Pun";
+import './PunsList.css'
 
 const PunsList = ({ puns }) => {
   return (
     <>
       <h1>Lista de Trocadilhos</h1>
-      <table>
-        <thead>
+      <table className="puns-list__table">
+        <thead className="puns-list__head">
           <th>Data</th>
           <th>Votos</th>
           <th>Dev</th>

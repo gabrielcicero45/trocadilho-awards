@@ -1,0 +1,44 @@
+.ranking__table {
+  margin: 50px auto;
+  border: 1px solid #2C3845;
+  width: 90vw;
+}
+
+.ranking__row {
+  padding-bottom: 10px;
+  border: 1px solid #2C3845;
+}
+
+.ranking__data {
+  padding: 10px;
+  text-align: center;
+  background-color: #2c384533; 
+}
+
+.ranking__head {
+  text-align: left;
+  font-weight: 700;
+  background-color: #2C3845;
+  border: 1px solid #2C3845;
+  color: white;
+}
+
+.ranking__head th {
+  padding: 8px;
+}
+
+.ranking__row:nth-child(even) td {
+  background-color: #2c384586; 
+}
+
+.ranking__row:first-child td:first-child {
+  background-color: gold; 
+}
+
+.ranking__row:nth-child(2) td:first-child {
+  background-color: silver; 
+}
+
+.ranking__row:nth-child(3) td:first-child {
+  background-color: #cd7f32; 
+}
