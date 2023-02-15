@@ -13,6 +13,7 @@
 
 # misc
 .vscode
+.eslintrc.js
 .DS_Store
 .env.local
 .env.development.local
