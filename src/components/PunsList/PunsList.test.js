@@ -28,7 +28,7 @@ describe("<PunsList/>", () => {
 
       expect(punsTable).toBeInTheDocument();
     });
-
+    
     it("Has the same size as the data entry", () => {
       render(<PunsList puns={puns} />);
       const punsRows = screen.queryAllByRole("row");

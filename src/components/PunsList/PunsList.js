@@ -1,4 +1,3 @@
-import React from "react";
 import Pun from "../Pun/Pun";
 
 const PunsList = ({ puns }) => {

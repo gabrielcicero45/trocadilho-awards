@@ -41,7 +41,8 @@ describe("<Pun/>", () => {
 
     expect(punVotes).toBeInTheDocument();
   });
-  it("Contains the Discord user who made the Pun", () => {
+
+  it("Contains the dev who made the Pun", () => {
     render(
       <Pun
         date={pun.date}
@@ -55,6 +56,7 @@ describe("<Pun/>", () => {
 
     expect(punDev).toBeInTheDocument();
   });
+
   it("Must contain the message", () => {
     render(
       <Pun
@@ -69,6 +71,7 @@ describe("<Pun/>", () => {
 
     expect(punMessage).toBeInTheDocument();
   });
+
   it("Must contain the context", () => {
     render(
       <Pun
@@ -86,7 +89,7 @@ describe("<Pun/>", () => {
     expect(punContext).toBeInTheDocument();
   });
 
-  it("Clicking the vote button should update the vote count.", ()=>{
+  it("Clicking the vote button should update the vote count.", () => {
     render(
       <Pun
         date={pun.date}
@@ -96,11 +99,11 @@ describe("<Pun/>", () => {
         message={pun.message}
       />
     );
-    const voteButton = screen.getByRole('button')
-    userEvent.click(voteButton)
-    
+    const voteButton = screen.getByRole("button");
+    userEvent.click(voteButton);
+
     const votesUpdated = screen.getByRole("cell", { name: 11 });
-    
-    expect(votesUpdated).toBeInTheDocument()
+
+    expect(votesUpdated).toBeInTheDocument();
   });
 });
