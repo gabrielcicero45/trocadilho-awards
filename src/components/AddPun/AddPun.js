@@ -1,16 +1,18 @@
 import "./AddPun.css";
-const AddPun = () => {
+const AddPun = ({pun,handleSubmit,handlePunChange}) => {
   return (
     <>
       <h2 className="add-pun__title">Adicionar Trocadilho</h2>
-      <form className="form">
-        <label htmlFor="data">
+      <form className="form" onSubmit={handleSubmit}>
+        <label htmlFor="date">
           Data
           <input
             className="form__input form__input--half"
             type="date"
-            name="data"
-            id="data"
+            name="date"
+            id="date"
+            onChange={handlePunChange}
+            value={pun.date}
           />
         </label>
         <label htmlFor="dev">
@@ -20,24 +22,30 @@ const AddPun = () => {
             type="text"
             name="dev"
             id="dev"
+            onChange={handlePunChange}
+            value={pun.dev}
           />
         </label>
-        <label htmlFor="contexto">
+        <label htmlFor="context">
           Contexto
           <input
             className="form__input"
             type="text"
-            name="contexto"
-            id="contexto"
+            name="context"
+            id="context"
+            onChange={handlePunChange}
+            value={pun.context}
           />
         </label>
-        <label htmlFor="trocadilho">
+        <label htmlFor="message">
           Trocadilho
           <input
             className="form__input"
             type="text"
-            name="trocadilho"
-            id="trocadilho"
+            name="message"
+            id="message"
+            onChange={handlePunChange}
+            value={pun.message}
           />
         </label>
         <button className="button" type="submit">Adicionar</button>
