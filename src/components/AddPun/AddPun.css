@@ -1,9 +1,9 @@
-.add-pun__title{
+.pun__title {
   font-weight: 300;
   font-size: 36px;
 }
 
-.form{
+.form {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
