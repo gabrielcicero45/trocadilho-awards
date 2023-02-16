@@ -4,10 +4,10 @@ import "./Ranking.css";
 
 const Rankings = ({ puns, devs }) => {
   const punsRanking = puns.sort((pun, anotherPun) => {
-    return -pun.votes + anotherPun.votes;
+    return anotherPun.votes-pun.votes;
   });
   const devsRanking = devs.sort((dev, anotherDev) => {
-    return -dev.puns + anotherDev.puns;
+    return anotherDev.puns-dev.puns ;
   });
   return (
     <>

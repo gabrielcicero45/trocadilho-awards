@@ -2,8 +2,10 @@
   font-size: 36px;
   font-weight: 300;
 }
+
 .puns-list__table {
-  margin: 50px;
+  margin: 50px auto;
+  min-width: 90vw;
 }
 
 .puns-list__row {
