@@ -1,14 +1,14 @@
 
-const TabNavigation = ({renderPunsList,renderAddPun, renderRankings}) => {
+const TabNavigation = ({renderTab}) => {
   return (
     <div>
-      <button onClick={renderPunsList}>
+      <button className="button" onClick={() => {renderTab('punsList')}}>
         Lista de Trocadilhos
       </button>
-      <button onClick={renderAddPun}>
+      <button className="button" onClick={() =>{renderTab('addPuns')}}>
         Adicionar Trocadilho
       </button>
-      <button onClick={renderRankings}>
+      <button className="button" onClick={() =>{renderTab('rankings')}}>
         Rankings
       </button>
     </div>

@@ -8,39 +8,19 @@ import { puns } from "./entries/puns";
 import { devs } from "./entries/devs";
 
 function App() {
-  const renderPunsList = () => {
-    setPunsListTab(true);
-    setAddPunTab(false);
-    setRankingsTab(false);
+  const renderTab = (tabId) => {
+    setActiveTab(tabId);
   };
 
-  const renderAddPun = () => {
-    setPunsListTab(false);
-    setAddPunTab(true);
-    setRankingsTab(false);
-  };
-
-  const renderRankings = () => {
-    setPunsListTab(false);
-    setAddPunTab(false);
-    setRankingsTab(true);
-  };
-
-  const [punsListTab, setPunsListTab] = useState(true);
-  const [addPunTab, setAddPunTab] = useState(false);
-  const [rankingsTab, setRankingsTab] = useState(false);
+  const [activeTab, setActiveTab] = useState("punsList");
 
   return (
     <div className="App">
       <h1>Trocadilho Awards</h1>
-      <TabNavigation
-        renderPunsList={renderPunsList}
-        renderAddPun={renderAddPun}
-        renderRankings={renderRankings}
-      />
-      {punsListTab && <PunsList puns={puns} />}
-      {addPunTab && <AddPun/>}
-      {rankingsTab && <Rankings puns={puns} devs={devs} />}
+      <TabNavigation renderTab={renderTab} />
+      {activeTab === "punsList" && <PunsList puns={puns} />}
+      {activeTab === "addPuns" && <AddPun />}
+      {activeTab === "rankings" && <Rankings puns={puns} devs={devs} />}
     </div>
   );
 }
