@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import Rankings from "./Rankings";
 
 const renderComponent = () => {
@@ -21,6 +20,7 @@ const renderComponent = () => {
   ];
   render(<Rankings puns={puns} devs={devs} />);
 };
+
 describe("<Rankings/>", () => {
   it("Should render two rankings tables", () => {
     renderComponent();
@@ -28,9 +28,4 @@ describe("<Rankings/>", () => {
 
     expect(rankingTables).toHaveLength(2);
   });
-
-  it.todo('Should have the same size as the data entry in best puns table')
-
-  it.todo('Should have the same size as the data entry in most creative devs table')
-
 });
