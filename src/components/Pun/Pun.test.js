@@ -22,13 +22,11 @@ const renderComponent = (props = {}) => {
       {...props}
     />
   );
-}
+};
 
 describe("<Pun/>", () => {
-
-
   it("Contains the date that it was made", () => {
-    renderComponent()
+    renderComponent();
 
     const punDate = screen.getByRole("cell", { name: "01/02/2023" });
 
@@ -36,28 +34,28 @@ describe("<Pun/>", () => {
   });
 
   it("Contains the number of votes", () => {
-    renderComponent()
+    renderComponent();
     const punVotes = screen.getByRole("cell", { name: 10 });
 
     expect(punVotes).toBeInTheDocument();
   });
 
   it("Contains the dev who made the Pun", () => {
-    renderComponent()
+    renderComponent();
     const punDev = screen.getByRole("cell", { name: /cicero\.medeirios/i });
 
     expect(punDev).toBeInTheDocument();
   });
 
   it("Must contain the message", () => {
-    renderComponent()
+    renderComponent();
     const punMessage = screen.getByRole("cell", { name: "Lorem ipsus" });
 
     expect(punMessage).toBeInTheDocument();
   });
 
   it("Must contain the context", () => {
-    renderComponent()
+    renderComponent();
     const punContext = screen.getByRole("cell", {
       name: "Lorem ipsum dolor,sit alit. Fugiat animi quaerat assumenda architecto possimus qui itaque reprehenderit tempore provident debitis? Dicta blanditiis mollitia reiciendis saepe. Alias, facere? Excepturi, officia obcaecati.",
     });
@@ -66,14 +64,14 @@ describe("<Pun/>", () => {
   });
 
   it("Must contain the vote button", () => {
-    renderComponent()
+    renderComponent();
     const voteButton = screen.getByRole("button");
 
     expect(voteButton).toBeInTheDocument();
-  })
+  });
 
   it("Clicking the vote button should update the vote count.", () => {
-    renderComponent()
+    renderComponent();
     const voteButton = screen.getByRole("button");
 
     userEvent.click(voteButton);
