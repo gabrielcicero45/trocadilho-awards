@@ -8,11 +8,11 @@ import { puns } from "./entries/puns";
 import { devs } from "./entries/devs";
 
 function App() {
+  const [activeTab, setActiveTab] = useState("punsList");
+  
   const renderTab = (tabId) => {
     setActiveTab(tabId);
   };
-
-  const [activeTab, setActiveTab] = useState("punsList");
 
   return (
     <div className="App">
