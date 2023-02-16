@@ -11,7 +11,7 @@ const Pun = ({date,initialVotes,dev,context,message}) => {
       <td className="puns-list__data">{context}</td>
       <td className="puns-list__data">{message}</td>
       <td className="puns-list__data">
-        <button onClick={()=>{setVotes(votes => votes+=1)}}>Votar</button>
+        <button className="button" onClick={()=>{setVotes(votes => votes+=1)}}>Votar</button>
       </td>
     </tr>
   );

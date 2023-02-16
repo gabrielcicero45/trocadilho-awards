@@ -1,3 +1,8 @@
+.ranking__title{
+  font-size: 36px;
+  font-weight: 300;
+}
+
 .ranking__table {
   margin: 50px auto;
   border: 1px solid #2C3845;

@@ -12,12 +12,7 @@ code {
     monospace;
 }
 
-h1,h2,h3 {
-  text-align: center;
-  font-weight: 300;
-}
-
-button {
+.button {
   font-size: 18px;
   border-radius: 5px;
   background-color: #069937;

@@ -9,7 +9,7 @@ const Rankings = ({ puns, devs }) => {
   });
   return (
     <>
-      <h1>Melhores Trocadilhos</h1>
+      <h2 className="ranking__title">Melhores Trocadilhos</h2>
 
       <table className="ranking__table">
         <thead>
