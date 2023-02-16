@@ -2,10 +2,13 @@ import Pun from "../Pun/Pun";
 import "./PunsList.css";
 
 const PunsList = ({ puns }) => {
+  const updateVote = (id,changes) => {
+    puns.handleUpdate(id, changes)
+  }
   return (
     <>
-      <h1>Lista de Trocadilhos</h1>
-      {puns.length > 0 ? (
+      <h2 className="puns-list__title">Lista de Trocadilhos</h2>
+      {puns.value.length > 0 ? (
         <table className="puns-list__table">
           <thead className="puns-list__head">
             <th>Data</th>
@@ -16,15 +19,17 @@ const PunsList = ({ puns }) => {
             <th>Votar</th>
           </thead>
           <tbody>
-            {puns.map(({ date, votes, dev, context, message }) => {
+            {puns.value.map(({ id, date, votes, dev, context, message }) => {
               return (
                 <Pun
-                  key={date}
+                  key={id}
+                  id={id}
                   date={date}
                   initialVotes={votes}
                   dev={dev}
                   context={context}
                   message={message}
+                  updateVote = {updateVote}
                 />
               );
             })}
