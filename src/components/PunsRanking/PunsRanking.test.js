@@ -45,7 +45,7 @@ describe("<PunsRanking />", () => {
     it("A message should be displayed saying that the list is empty", () => {
       render(<PunsRanking punsRanking={punsRankingEmpty} />);
 
-      const emptyMessage = screen.getByText(/Lista vazia!/i);
+      const emptyMessage = screen.getByText(/Ainda não há dados suficientes para gerar um ranking!/i);
 
       expect(emptyMessage).toBeInTheDocument();
     });

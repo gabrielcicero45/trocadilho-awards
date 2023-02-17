@@ -28,7 +28,7 @@ const PunsRanking = ({ punsRanking }) => {
           </table>
         </>
       ) : (
-        <h2>Lista Vazia!</h2>
+        <h2>Ainda não há dados suficientes para gerar um ranking!</h2>
       )}
     </>
   );
