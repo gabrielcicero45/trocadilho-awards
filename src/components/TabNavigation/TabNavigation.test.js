@@ -32,7 +32,7 @@ describe("<TabNavigation />", () => {
     it("Should update the Puns list state", () => {
       const changeState = jest.fn();
 
-      render(<TabNavigation renderPunsList={changeState} />);
+      render(<TabNavigation renderTab={changeState} />);
 
       const punsListButton = screen.getByRole("button", {
         name: /Lista de Trocadilhos/i,
@@ -47,7 +47,7 @@ describe("<TabNavigation />", () => {
   describe("When the Add Puns button is clicked", () => {
     it("Should update the Add Puns state", () => {
       const changeState = jest.fn();
-      render(<TabNavigation renderAddPun={changeState}/>)
+      render(<TabNavigation renderTab={changeState}/>)
       const addPunsButton = screen.getByRole("button", {
         name: /Adicionar trocadilho/i,
       });
@@ -61,7 +61,7 @@ describe("<TabNavigation />", () => {
   describe("When the Rankings button is clicked", () => {
     it("Should update the Rankings state", () => {
       const changeState = jest.fn();
-      render(<TabNavigation renderRankings={changeState}/>)
+      render(<TabNavigation renderTab={changeState}/>)
       const rankingsButton = screen.getByRole("button", { name: /Rankings/i });
 
       userEvent.click(rankingsButton);
