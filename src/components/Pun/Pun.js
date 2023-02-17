@@ -1,17 +1,23 @@
 import { useState } from "react";
 
-const Pun = ({date,initialVotes,dev,context,message}) => {
+const Pun = ({ id, date, initialVotes, dev, context, message, updateVote }) => {
+  const [votes, setVotes] = useState(initialVotes);
 
-  const [votes, setVotes] = useState(initialVotes)
+  const addVote = () => {
+    setVotes((votes) => (votes += 1));
+    updateVote(id,{votes: votes+1});
+  };
   return (
-    <tr>
-      <td>{date}</td>
-      <td>{votes}</td>
-      <td>{dev}</td>
-      <td>{context}</td>
-      <td>{message}</td>
-      <td>
-        <button onClick={()=>{setVotes(votes => votes+=1)}}>Votar</button>
+    <tr className="puns-list__row">
+      <td className="puns-list__data">{date}</td>
+      <td className="puns-list__data">{votes}</td>
+      <td className="puns-list__data">{dev}</td>
+      <td className="puns-list__data">{context}</td>
+      <td className="puns-list__data">{message}</td>
+      <td className="puns-list__data">
+        <button className="button" onClick={addVote}>
+          Votar
+        </button>
       </td>
     </tr>
   );

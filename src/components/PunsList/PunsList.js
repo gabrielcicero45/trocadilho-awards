@@ -1,37 +1,43 @@
 import Pun from "../Pun/Pun";
+import "./PunsList.css";
 
 const PunsList = ({ puns }) => {
+  const updateVote = (id,changes) => {
+    puns.handleUpdate(id, changes)
+  }
   return (
     <>
-      <h1>Lista de Trocadilhos</h1>
-      <table>
-        <thead>
-          <th>Data</th>
-          <th>Votos</th>
-          <th>Dev</th>
-          <th>Contexto</th>
-          <th>Trocadilho</th>
-          <th>Votar</th>
-        </thead>
-        <tbody>
-          {puns.length > 0 ? (
-            puns.map(({ date, votes, dev, context, message }) => {
+      <h2 className="puns-list__title">Lista de Trocadilhos</h2>
+      {puns.value.length > 0 ? (
+        <table className="puns-list__table">
+          <thead className="puns-list__head">
+            <th>Data</th>
+            <th>Votos</th>
+            <th>Dev</th>
+            <th>Contexto</th>
+            <th>Trocadilho</th>
+            <th>Votar</th>
+          </thead>
+          <tbody>
+            {puns.value.map(({ id, date, votes, dev, context, message }) => {
               return (
                 <Pun
-                  key={date}
+                  key={id}
+                  id={id}
                   date={date}
                   initialVotes={votes}
                   dev={dev}
                   context={context}
                   message={message}
+                  updateVote = {updateVote}
                 />
               );
-            })
-          ) : (
-            <h3>Lista vazia!</h3>
-          )}
-        </tbody>
-      </table>
+            })}
+          </tbody>
+        </table>
+      ) : (
+        <h3>Lista vazia!</h3>
+      )}
     </>
   );
 };
